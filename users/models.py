@@ -1,14 +1,11 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-NULLABLE = {
-    'null': True,
-    'blank': True
-}
+NULLABLE = {"blank": True, "null": True}
 
 
 class User(AbstractUser):
-    """Информация о пользователе"""
+    """Cоздания модели Пользователя"""
     username = None
 
     email = models.EmailField(unique=True, verbose_name='Email')

@@ -8,4 +8,4 @@ class ModuleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Module
-        fields = '__all__'
+        fields = "__all__"

@@ -20,7 +20,7 @@ class ModuleCreateAPIView(generics.CreateAPIView):
 
 
 class ModuleListAPIView(generics.ListAPIView):
-    "Для просмотра списка модулей"
+    """Для просмотра списка модулей"""
     serializer_class = ModuleSerializer
     queryset = Module.objects.all()
     pagination_class = ModulesPaginator

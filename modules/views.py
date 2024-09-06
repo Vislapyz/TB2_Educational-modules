@@ -1,9 +1,9 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
+
 from modules.models import Module
 from modules.paginators import ModulesPaginator
 from modules.permissions import IsOwner
-
 from modules.serializers import ModuleSerializer
 
 
@@ -21,6 +21,7 @@ class ModuleCreateAPIView(generics.CreateAPIView):
 
 class ModuleListAPIView(generics.ListAPIView):
     """Для просмотра списка модулей"""
+
     serializer_class = ModuleSerializer
     queryset = Module.objects.all()
     pagination_class = ModulesPaginator
@@ -36,6 +37,7 @@ class ModuleRetrieveAPIView(generics.RetrieveAPIView):
 
 class ModuleUpdateAPIView(generics.UpdateAPIView):
     """Для обновления модуля"""
+
     serializer_class = ModuleSerializer
     permission_classes = [IsOwner]
 
@@ -45,6 +47,7 @@ class ModuleUpdateAPIView(generics.UpdateAPIView):
 
 class ModuleDestroyAPIView(generics.DestroyAPIView):
     """Удаления модуля"""
+
     queryset = Module.objects.all()
     serializer_class = ModuleSerializer
     permission_classes = [IsOwner]
